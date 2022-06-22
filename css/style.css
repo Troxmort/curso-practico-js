@@ -32,7 +32,7 @@ header p {
     color: gray;
 }
 
-.main-CTC-container {
+.main-container {
     width: 100%;
     padding: 1rem;
     background-color: #16796f;
@@ -40,17 +40,17 @@ header p {
     margin-bottom: 3rem;
 }
 
-.main-CTC-container .title-cuadrado {
+.main-container .title-general {
     text-align: center;
     margin-bottom: 2rem;
 }
 
-.form-CTC span {
+.form-general span {
     display: inline-block;
     margin-bottom: 1rem;
 }
 
-.form-CTC input{
+.form-general input{
      width: 100%;
      border: none;
      padding: 0.5rem;
@@ -59,11 +59,32 @@ header p {
      margin-bottom: 2rem;
 }
 
-.form-CTC .button-calculadora {
+.form-general .button-calculadora {
     width: 100%;
     padding: 0.5rem;
     font-weight: bold;
     margin-bottom: 1rem;
+}
+
+.title-porcentajes {
+    color: #37FDE8;
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.info-porcentajes {
+    color: gray;
+    text-align: center;
+    padding: 1rem;
+    margin-bottom: 3rem;
+}
+
+#resultadoP {
+    text-align: center;
+    font-size: 2rem;
+    padding-top: 2rem;
+    margin-bottom: 2rem;
 }
 
 @media (min-width: 768px) {

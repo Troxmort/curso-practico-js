@@ -17,60 +17,97 @@
     </header>
     <main>
         <div class="container">
-            <section class="main-CTC-container">
-                <h2 class="title-cuadrado">Calcula el area y perimetro de un triangulo</h2>
-                <form action="" class="form-CTC">
+            <section class="main-container">
+                <h2 class="title-general">Calcula el area y perimetro de un triangulo</h2>
+                <form action="" class="form-general">
                     <label for="inputTriangulo">
                         <span>Escribe cuando mide un lado del triangulo:</span>
                         <input type="number" id="inputTriangulo">
+                    </label>
+                    <label for="inputTriangulo1">
                         <span>Escribe cuando mide un lado del triangulo:</span>
                         <input type="number" id="inputTriangulo1">
+                    </label>
+                    <label for="inputBaseTriangulo">
                         <span>Escribe cuando mide la base del triangulo:</span>
                         <input type="number" id="inputBaseTriangulo">
+                    </label>
+                    <label for="inputAlturaTriangulo">
                         <span>Escribe cuando mide la altura del triangulo:</span>
                         <input type="number" id="inputAlturaTriangulo">
-                        <button class="button-calculadora" type="button" onclick="calcularPerimetroTriangulo()">Calcular perimetro</button>
-                        <button class="button-calculadora" type="button" onclick="calcularAreaTriangulo()">Calcular area</button>
                     </label>
+                    <button class="button-calculadora" type="button" onclick="calcularPerimetroTriangulo()">Calcular perimetro</button>
+                    <button class="button-calculadora" type="button" onclick="calcularAreaTriangulo()">Calcular area</button>
+                    <p id="resultadoT"></p>
                 </form>
             </section>
 
-            <section class="main-CTC-container">
-                <h2 class="title-cuadrado">Calcula la altura de un triangulo isosceles</h2>
-                <form action="" class="form-CTC">
+            <section class="main-container">
+                <h2 class="title-general">Calcula la altura de un triangulo isosceles</h2>
+                <form action="" class="form-general">
                     <label for="inputTrianguloA">
                         <span>Escribe cuando mide un lado del triangulo:</span>
                         <input type="number" id="inputTrianguloA">
+                    </label>
+                    <label for="inputTriangulo1A">
                         <span>Escribe cuando mide un lado del triangulo:</span>
                         <input type="number" id="inputTriangulo1A">
+                    </label>
+                    <label for="inputBaseTrianguloA">
                         <span>Escribe cuando mide la base del triangulo:</span>
                         <input type="number" id="inputBaseTrianguloA">
-                        <button class="button-calculadora" type="button" onclick="calcularAlturaTrianguloIsosceles()">Calcular altura</button>
                     </label>
+                    <button class="button-calculadora" type="button" onclick="calcularAlturaTrianguloIsosceles()">Calcular altura</button>
+                    <p id="resultadoTI"></p>
                 </form>
             </section>
 
-            <section class="main-CTC-container">
-                <h2 class="title-cuadrado">Calcula el area y perimetro de un cuadrado</h2>
-                <form action="" class="form-CTC">
+            <section class="main-container">
+                <h2 class="title-general">Calcula el area y perimetro de un cuadrado</h2>
+                <form action="" class="form-general">
                     <label for="inputCuadrado">
                         <span>Escribe cuanto mide cada lado de tu cuadrado:</span>
                         <input type="number" id="inputCuadrado">
-                        <button class="button-calculadora" type="button" onclick="calcularPerimetroCuadrado()">Calcular perimetro</button>
-                        <button class="button-calculadora" type="button" onclick="calcularAreaCuadrado()">Calcular area</button>
                     </label>
+                    <button class="button-calculadora" type="button" onclick="calcularPerimetroCuadrado()">Calcular perimetro</button>
+                    <button class="button-calculadora" type="button" onclick="calcularAreaCuadrado()">Calcular area</button>
+                    <p id="resultadoCu"></p>
                 </form>
             </section>
 
-            <section class="main-CTC-container">
-                <h2 class="title-cuadrado">Calcula el area y perimetro de un circulo</h2>
-                <form action="" class="form-CTC">
+            <section class="main-container">
+                <h2 class="title-general">Calcula el area y perimetro de un circulo</h2>
+                <form action="" class="form-general">
                     <label for="inputCirculo">
                         <span>Escribe cuanto mide el radio de un ciruclo:</span>
                         <input type="number" id="inputCirculo">
-                        <button class="button-calculadora" type="button" onclick="calcularPerimetroCirculo()">Calcular perimetro</button>
-                        <button class="button-calculadora" type="button" onclick="calcularAreaCirculo()">Calcular area</button>
                     </label>
+                    <button class="button-calculadora" type="button" onclick="calcularPerimetroCirculo()">Calcular perimetro</button>
+                    <button class="button-calculadora" type="button" onclick="calcularAreaCirculo()">Calcular area</button>
+                    <p id="resultadoC"></p>
+                </form>
+            </section>
+        </div>
+
+        <div>
+            <h2 class="title-porcentajes">Procentajes y descuentos</h2>
+            <p class="info-porcentajes">Este es el segundo taller del curso practico de JS</p>
+        </div>
+
+        <div class="container">
+            <section class="main-container">
+                <h2 class="title-general">Calcula el precio a pagar de tus productos por descuentos</h2>
+                <form action="" class="form-general">
+                    <label for="inputPrecio">
+                        <span>Ingrese el precio original del producto:</span>
+                        <input type="number" id="inputPrecio">
+                    </label>
+                    <label for="inputCupones">
+                        <span>Ingrese cupon con descuento para tu producto:</span>
+                        <input type="text" id="inputCupones">
+                    </label>
+                    <button type="button" class="button-calculadora" onclick="calcularPorcentajeDescuento()">Calcular el porcetanje y descuento</button>
+                    <p id="resultadoP"></p>
                 </form>
             </section>
         </div>

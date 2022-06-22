@@ -1,38 +1,18 @@
 // Codigo del cuadrado
 
-console.group("Cuadrados");
-
-// const ladoCuadrado = 5;
-// console.log("Los lados del cuadrado miden: " + ladoCuadrado + "cm");
-
 function perimetroCuadrado (lado){
     return lado * 4;
 }
-// console.log("El perimetro del cuadrado es: " + perimetroCuadrado + "cm");
 
 function areaCuadrado (lado) {
     return lado * lado;
 }
-// console.log("El area del cuadrado es: " + areaCuadrado + "cm^2");
-
-console.groupEnd();
 
 // Codigo del triangulo
-
-console.group("Triangulos");
-
-// const ladoTriangulo1 = 6;
-// const ladoTriangulo2 = 6;
-// const baseTriangulo = 4;
-// const alturaTriangulo = 5.5;
-
-// console.log("Los lados del triangulo miden: " + ladoTriangulo1 + "cm, " + ladoTriangulo2 + "cm, " + baseTriangulo + "cm");
-// console.log("La altura del triangulo es de: " + alturaTriangulo + "cm");
 
 function perimetroTriangulo (lado1, lado2, base) {
     return lado1 + lado2 + base;
 }
-// console.log("El perimetro del triangulo es: " + perimetroTriangulo + "cm");
 
 function areaTriangulo (base, altura) {
     return (base * altura) / 2;
@@ -43,42 +23,30 @@ function alturaTrianguloIsosceles (ladoA1, ladoA2, baseA) {
         const cateto = (baseA / 2) ** 2;
         const hipotenusa = (ladoA1) ** 2;
         const altura = Math.sqrt((hipotenusa) - (cateto));
-        alert("La altura es: " + altura);
+        const resultadoTI = document.getElementById("resultadoTI");
+        resultadoTI.innerText = "La altura del triagulo isosceles es: " + altura + "cm";
     } else {
-        alert("No es un triangulo isosceles.");
+        const resultadoTI = document.getElementById("resultadoTI");
+        resultadoTI.innerText = "El triangulo no es un isosceles";
     }
 }
-// console.log("El area del triangulo es: " + areaTriangulo + "cm^2");
-
-console.groupEnd();
 
 // Codigo del circulo
-
-console.group("Circulos");
-
-// const radioCirculo = 4;
-// console.log("El radio del circulo es: " + radioCirculo + "cm");
 
 function diametroCirculo (radio) {
     return radio * 2;
 }
-// console.log("El diametro del circulo es: " + diametroCirculo + "cm");
 
 const PI = Math.PI;
-// console.log("PI es: " + PI);
 
 function perimetroCirculo (radio) {
     const diametro = diametroCirculo(radio);
     return diametro * PI;
 }
-// console.log("El perimetro del circulo es: " + perimetroCirculo + "cm");
 
 function areaCirculo (radio) {
     return (radio * radio) * PI;
 }
-// console.log("El area del circulo es: " + areaCirculo + "cm^2");
-
-console.groupEnd();
 
 // Aqui interactuamos con el html.
 
@@ -89,15 +57,17 @@ function calcularPerimetroCuadrado () {
     const valueCuadrado = Number(inputCuadrado.value);
 
     const perimetro = perimetroCuadrado(valueCuadrado);
-    alert(perimetro);
+    const resultadoCu = document.getElementById("resultadoCu");
+    resultadoCu.innerText = "El perimetro del cuadrado es de: " + perimetro + "cm";
 }
 
 function calcularAreaCuadrado () {
     const inputCuadrado = document.getElementById("inputCuadrado");
     const valueCuadrado = Number(inputCuadrado.value);
 
-    const areaCuadrado = areaCuadrado(valueCuadrado);
-    alert(areaCuadrado);
+    const areaCuadradoa = areaCuadrado(valueCuadrado);
+    const resultadoCu = document.getElementById("resultadoCu");
+    resultadoCu.innerText = "El area del cuadradi es de: " + areaCuadradoa + "cm";
 }
 
 // Codigo del triangulo
@@ -113,7 +83,8 @@ function calcularPerimetroTriangulo () {
     const valueBaseTriangulo = Number(inputBaseTriangulo.value);
 
     const perimetroT = perimetroTriangulo(valueTriangulo, valueTriangulo1, valueBaseTriangulo);
-    alert(perimetroT);
+    const resultadoT = document.getElementById("resultadoT");
+    resultadoT.innerText = "El perimetro del triangulo es: " + perimetroT + "cm";
 }
 
 function calcularAreaTriangulo () {
@@ -124,7 +95,8 @@ function calcularAreaTriangulo () {
     const valueAlturaTriangulo = Number(inputAlturaTriangulo.value);
 
     const areaT = areaTriangulo(valueBaseTriangulo, valueAlturaTriangulo);
-    alert(areaT);
+    const resultadoT = document.getElementById("resultadoT");
+    resultadoT.innerText = "El area del triangulo es de: " + areaT + "cm";
 }
 
 function calcularAlturaTrianguloIsosceles () {
@@ -147,7 +119,8 @@ function calcularPerimetroCirculo () {
     const valueCirculo = Number(inputCirculo.value);
 
     const perimetroC = perimetroCirculo(valueCirculo);
-    alert(perimetroC);
+    const resultadoC = document.getElementById("resultadoC");
+    resultadoC.innerText = "El perimetro del circulo es de: " + perimetroC + "cm";
 }
 
 function calcularAreaCirculo () {
@@ -155,5 +128,44 @@ function calcularAreaCirculo () {
     const valueCirculo = Number(inputCirculo.value);
 
     const areaC = areaCirculo(valueCirculo);
-    alert(areaC);
+    const resultadoC = document.getElementById("resultadoC");
+    resultadoC.innerText = "El area del circulo es de: " + areaC + "cm";
 }
+
+
+// ==========================PROCENTAJES Y DESCUENTOS==========================
+// Segundo taller practico del curso basico de JS.
+
+const cupones = ["matias", "troxmort", "matu"];
+
+function calcularPrecioConDescuento (precio, descuento) {
+    return (precio * (100 - descuento)) / 100;
+}
+
+function calcularPorcentajeDescuento() {
+    const inputPrecio = document.getElementById("inputPrecio");
+    const valuePrecio = Number(inputPrecio.value);
+
+    const inputCupones = document.getElementById("inputCupones");
+    const valueCupones = inputCupones.value;
+
+    let descuento;
+
+    switch (valueCupones) {
+        case cupones[0]:
+            descuento = 15;
+        break;
+        case cupones[1]:
+            descuento = 30;
+        break;
+        case cupones[2]:
+            descuento = 25;
+        break;
+    }
+
+    const precioConDescuento = calcularPrecioConDescuento(valuePrecio, descuento);
+    
+    const resultadoP = document.getElementById("resultadoP");
+    resultadoP.innerText = "El precio con descuento es: $" + precioConDescuento;
+}
+
