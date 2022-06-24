@@ -1,3 +1,6 @@
+//==========================PERIMETRO Y AREA==========================
+// Primer taller practico del curso basico de JS
+
 // Codigo del cuadrado
 
 function perimetroCuadrado (lado){
@@ -169,3 +172,79 @@ function calcularPorcentajeDescuento() {
     resultadoP.innerText = "El precio con descuento es: $" + precioConDescuento;
 }
 
+// ==========================PROMEDIOS Y MODA==========================
+// Tercer taller practico del curso basico de JS.
+
+// Promedio
+
+function calcularMediaAritmetica (lista) {
+    // let sumaLista = 0;
+    // for (let i = 0; i < lista.length; i++) {
+    // sumaLista = sumaLista + lista[i];
+    // }
+
+    const sumaLista = lista.reduce(
+        function (valorAcumulado = 0, nuevoElemento) {
+            return valorAcumulado + nuevoElemento;
+        }
+    );
+    const promedioLista = sumaLista / lista.length;
+
+    return promedioLista;
+}
+
+// Mediana
+
+const lista1 = [340, 600,500, 100, 200, 400000000];
+function compareNumbers(a, b) {
+    return a - b;
+  }
+lista1.sort(compareNumbers);
+
+function esPar(numero) {
+    if (numero % 2 === 0) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+let mediana;
+const mitadLista1 = parseInt(lista1.length / 2);
+
+if (esPar(lista1.length)) {
+    const elemento1 = lista1[mitadLista1 - 1];
+    const elemento2 = lista1[mitadLista1];
+
+    const promedioElemento1y2 = calcularMediaAritmetica([elemento1, elemento2]);
+
+    mediana = promedioElemento1y2;
+
+} else {
+    mediana = lista1[mitadLista1];
+}
+
+
+// Moda
+
+const lista2 = [1, 2, 6, 65, 652, 235, 2, 48596, 2, 985, 9898, 121, 2, 689, 2];
+
+const lista2count = {};
+
+lista2.map(
+    function (elemento) {
+        if (lista2count[elemento]) {
+            lista2count[elemento] += 1;
+        } else {
+            lista2count[elemento] = 1;
+        }
+    }
+);
+
+const lista2array = Object.entries(lista2count).sort(
+    function (valorAcumuladoModa, nuevoValorModa) {
+        return valorAcumuladoModa[1] - nuevoValorModa[1];
+    }
+);
+
+const moda = lista2array[lista2array.length - 1];

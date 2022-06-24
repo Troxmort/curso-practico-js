@@ -17,3 +17,10 @@ Es un curso practico de JS
 - Tercer paso: Crear funciones.
 - Cuarto paso: Integrar JS con HTMl.
 
+## Taller #3: Promedio, mediana y moda.
+
+- Primer paso: Definir las formulas.
+- Segundo paso: Implementar las formulas en JS. 
+- Tercer paso: Crear funciones.
+- Cuarto paso: Integrar JS con HTMl.
+
