@@ -177,21 +177,46 @@ function calcularPorcentajeDescuento() {
 
 // Promedio
 
-function calcularMediaAritmetica (lista) {
-    // let sumaLista = 0;
-    // for (let i = 0; i < lista.length; i++) {
-    // sumaLista = sumaLista + lista[i];
-    // }
 
+
+function calcularMediaAritmetica (lista) {
     const sumaLista = lista.reduce(
         function (valorAcumulado = 0, nuevoElemento) {
-            return valorAcumulado + nuevoElemento;
+            return Number(valorAcumulado) + Number(nuevoElemento);
         }
     );
+    console.log("Suma lista: " + sumaLista);
     const promedioLista = sumaLista / lista.length;
 
     return promedioLista;
 }
+
+const mediaAritmetica = [];
+
+function CMediaAritmetica() {
+
+
+    const pararEvento = document.getElementById("formEvent");
+    pararEvento.addEventListener("submit", function (event) {
+    event.preventDefault();
+    });
+
+    const inputPromedio = document.getElementById("inputPromedio");
+    const valuePromedio = Number(inputPromedio.value);
+    mediaAritmetica.push([valuePromedio]);
+
+    const resultadoMediaAritmetica = calcularMediaAritmetica(mediaAritmetica);
+
+    const ingresoMediaAritmetica = document.getElementById("ingresoMediaAritmetica");
+    ingresoMediaAritmetica.innerText = "Los numeros ingresados son: " + mediaAritmetica;
+
+    const RMediaAritmetica = document.getElementById("RMediaAritmetica");
+    RMediaAritmetica.innerText = "El promedio de los numeros ingresado es de: " + resultadoMediaAritmetica;
+
+    document.getElementById("formEvent").reset();
+};
+
+
 
 // Mediana
 
@@ -248,3 +273,8 @@ const lista2array = Object.entries(lista2count).sort(
 );
 
 const moda = lista2array[lista2array.length - 1];
+
+
+
+
+

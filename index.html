@@ -122,8 +122,24 @@
         <!-- ==========================PROMEDIOS Y MODA==========================
          Tercer taller practico del curso basico de JS. -->
 
+         <div>
+            <h2 class="title-porcentajes">Promedios y modas</h2>
+            <p class="info-porcentajes">Este es el tercer taller del curso practico de JS</p>
+        </div>
+
         <div class="container">
-            
+            <section class="main-container">
+                <h2 class="title-general">Calcular el promedio de los valores ingresados</h2>
+                <form action="" class="form-general" id="formEvent">
+                    <label for="inputPromedio">
+                        <span>Ingrese los numeros que quiere sacar el promedio:</span>
+                        <input type="number" id="inputPromedio">
+                    </label>
+                    <button type="submit" class="button-calculadora" onclick="CMediaAritmetica()">ingresar</button>
+                    <p id="ingresoMediaAritmetica"></p>
+                    <p id="RMediaAritmetica"></p>
+                </form>
+            </section>
         </div>
 
     </main>
