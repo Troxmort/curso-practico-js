@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Figuras geometricas</title>
+    <title>Calculadora</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -135,9 +135,22 @@
                         <span>Ingrese los numeros que quiere sacar el promedio:</span>
                         <input type="number" id="inputPromedio">
                     </label>
-                    <button type="submit" class="button-calculadora" onclick="CMediaAritmetica()">ingresar</button>
-                    <p id="ingresoMediaAritmetica"></p>
-                    <p id="RMediaAritmetica"></p>
+                    <button type="submit" class="button-calculadora" onclick="mostarPromedio()">Calcular promedio</button>
+                    <p id="ingresoPromedio"></p>
+                    <p id="RPromedio"></p>
+                </form>
+            </section>
+
+            <section class="main-container">
+                <h2 class="title-general">Calcular el promedio de los valores ingresados</h2>
+                <form action="" class="form-general" id="formEvent">
+                    <label for="inputMediana">
+                        <span>Ingrese los numeros que quiere sacar el promedio:</span>
+                        <input type="number" id="inputMediana">
+                    </label>
+                    <button type="submit" class="button-calculadora" onclick="mostarMediana()">Calcular promedio</button>
+                    <p id="ingresoMediana"></p>
+                    <p id="RMediana"></p>
                 </form>
             </section>
         </div>

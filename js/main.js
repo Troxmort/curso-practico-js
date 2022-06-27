@@ -177,54 +177,43 @@ function calcularPorcentajeDescuento() {
 
 // Promedio
 
+const pararEvento = document.getElementById("formEvent");
+pararEvento.addEventListener("submit", function (event) {
+event.preventDefault();
+});
 
 
-function calcularMediaAritmetica (lista) {
+function calcularPromedio (lista) {
     const sumaLista = lista.reduce(
         function (valorAcumulado = 0, nuevoElemento) {
             return Number(valorAcumulado) + Number(nuevoElemento);
         }
     );
-    console.log("Suma lista: " + sumaLista);
     const promedioLista = sumaLista / lista.length;
 
     return promedioLista;
 }
 
-const mediaAritmetica = [];
+const promedio = [];
 
-function CMediaAritmetica() {
-
-
-    const pararEvento = document.getElementById("formEvent");
-    pararEvento.addEventListener("submit", function (event) {
-    event.preventDefault();
-    });
-
+function mostarPromedio() {
     const inputPromedio = document.getElementById("inputPromedio");
     const valuePromedio = Number(inputPromedio.value);
-    mediaAritmetica.push([valuePromedio]);
+    promedio.push([valuePromedio]);
 
-    const resultadoMediaAritmetica = calcularMediaAritmetica(mediaAritmetica);
+    const resultadoPromedio = calcularPromedio(promedio);
 
-    const ingresoMediaAritmetica = document.getElementById("ingresoMediaAritmetica");
-    ingresoMediaAritmetica.innerText = "Los numeros ingresados son: " + mediaAritmetica;
+    const ingresoPromedio = document.getElementById("ingresoPromedio");
+    ingresoPromedio.innerText = "Los numeros ingresados son: " + promedio;
 
-    const RMediaAritmetica = document.getElementById("RMediaAritmetica");
-    RMediaAritmetica.innerText = "El promedio de los numeros ingresado es de: " + resultadoMediaAritmetica;
+    const RPromedio = document.getElementById("RPromedio");
+    RPromedio.innerText = "El promedio de los numeros ingresado es de: " + resultadoPromedio;
 
     document.getElementById("formEvent").reset();
 };
 
 
-
 // Mediana
-
-const lista1 = [340, 600,500, 100, 200, 400000000];
-function compareNumbers(a, b) {
-    return a - b;
-  }
-lista1.sort(compareNumbers);
 
 function esPar(numero) {
     if (numero % 2 === 0) {
@@ -234,20 +223,41 @@ function esPar(numero) {
     }
 }
 
-let mediana;
-const mitadLista1 = parseInt(lista1.length / 2);
+const medianaArray = [];
 
-if (esPar(lista1.length)) {
-    const elemento1 = lista1[mitadLista1 - 1];
-    const elemento2 = lista1[mitadLista1];
+function mostarMediana() {
+    const inputMediana = document.getElementById("inputMediana");
+    const valueMediana = Number(inputMediana.value);
+    medianaArray.push([valueMediana]);
 
-    const promedioElemento1y2 = calcularMediaAritmetica([elemento1, elemento2]);
+    function compareNumbers(a, b) {
+        return a - b;
+      };
+    medianaArray.sort(compareNumbers);
+    
+    let mediana;
+    const mitadMediana = parseInt(medianaArray.length / 2);
+    
+    if (esPar(medianaArray.length)) {
+        const elemento1 = medianaArray[mitadMediana - 1];
+        const elemento2 = medianaArray[mitadMediana];
+    
+        const promedioElemento1y2 = calcularPromedio([elemento1, elemento2]);
+    
+        mediana = promedioElemento1y2;
+    
+    } else {
+        mediana = medianaArray[mitadMediana];
+    }
 
-    mediana = promedioElemento1y2;
+    const ingresoMediana = document.getElementById("ingresoMediana");
+    ingresoMediana.innerText = "Los numeros ingresados son: " + medianaArray;
 
-} else {
-    mediana = lista1[mitadLista1];
-}
+    const RMediana = document.getElementById("RMediana");
+    RMediana.innerText = "La mediana de los numeros ingresados es: " + mediana;
+
+    document.getElementById("formEvent").reset();
+};
 
 
 // Moda
@@ -273,8 +283,5 @@ const lista2array = Object.entries(lista2count).sort(
 );
 
 const moda = lista2array[lista2array.length - 1];
-
-
-
 
 
